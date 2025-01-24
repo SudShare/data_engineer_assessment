@@ -25,6 +25,35 @@ Submission
 Share your solution with https://github.com/rarescrisan and notify rares@poplin.co and the assignment provider on completion.
 
 
+# Project Structure
 
+# Project Directory Structure
 
+```plaintext
+project/
+├── dags/                      # Airflow DAGs directory
+│   └── dbt_dag.py             # Airflow DAG to orchestrate dbt tasks
+├── dbt/                       # dbt project folder
+│   ├── poplin_project/        # dbt project configuration
+│   │   ├── dbt_project.yml    # Main dbt project configuration file
+│   │   ├── models/            # SQL models for dbt
+│   │   │   └── example/       # Example models
+│   │   ├── seeds/             # dbt seed data
+│   │   ├── snapshots/         # dbt snapshots
+│   │   └── tests/             # dbt tests
+│   └── profiles.yml           # dbt profiles configuration for database connections
+├── airflow/                   # Airflow customizations
+│   └── Dockerfile             # Dockerfile to add dbt to Airflow
+├── superset/                  # Superset customizations
+│   ├── Dockerfile             # Dockerfile for Superset customization
+│   └── superset_config.py     # Superset configuration file
+├── database/                  # Configuration for the source database
+│   └── Dockerfile             # Dockerfile for the source database
+├── logs/                      # Airflow logs
+├── plugins/                   # Airflow plugins
+├── seed_data.sql              # Seed data for the source database
+├── docker-compose.yml         # Main Docker Compose file
+└── README.md                  # Project instructions and documentation
+```
 
+# Databases and Warehousing 
